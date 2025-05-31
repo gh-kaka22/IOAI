@@ -87,34 +87,43 @@
 
       /* Language switcher */
       .lang-switcher {
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 4px;
-        border-radius: 9999px;
-        display: flex;
-      }
-      .lang-option {
-        padding: 4px 12px;
-        border-radius: 9999px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-      }
-      .lang-option.active {
-        background-color: white;
-        color: #2563eb;
-      }
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    border-radius: 9999px;
+    display: flex;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .lang-option {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .lang-option.active {
+    background-color: white;
+    color: #2563eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .lang-switcher-container {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 9999 !important;
+}
+
     </style>
   </head>
 
   <body class="bg-slate-50 text-slate-700">
     <!-- Language Switcher -->
-    <div class="fixed top-4 right-4 z-50">
+    <div class="lang-switcher-container">
       <div class="lang-switcher shadow-md">
-        <div
-          id="lang-en"
-          class="lang-option active"
-          onclick="switchLanguage('en')"
-        >
+        <div id="lang-en" class="lang-option active" onclick="switchLanguage('en')">
           EN
         </div>
         <div id="lang-ar" class="lang-option" onclick="switchLanguage('ar')">
@@ -336,8 +345,8 @@
                 <div class="prose prose-lg text-gray-700">
                   <p
                     class="text-lg leading-relaxed"
-                    data-en="The <span class='font-semibold text-blue-600'>International Olympiad in Artificial Intelligence (IOAI)</span> is a prestigious global competition that challenges and inspires the next generation of AI innovators."
-                    data-ar="<span class='font-semibold text-blue-600'>الأولمبياد الدولي في الذكاء الاصطناعي (IOAI)</span> هو مسابقة عالمية مرموقة تتحدى وتلهم الجيل القادم من مبتكري الذكاء الاصطناعي."
+                    data-en="The International Olympiad in Artificial Intelligence (IOAI) is a prestigious global competition that challenges and inspires the next generation of AI innovators."
+                    data-ar="الأولمبياد الدولي في الذكاء الاصطناعي (IOAI) هو مسابقة عالمية مرموقة تتحدى وتلهم الجيل القادم من مبتكري الذكاء الاصطناعي."
                   >
                     The
                     <span class="font-semibold text-blue-600"
@@ -1379,6 +1388,22 @@
       window.onload = () => {
         switchLanguage("en");
       };
+
+
+// Add this to your existing script
+window.addEventListener('load', function() {
+  const langSwitcher = document.querySelector('.lang-switcher-container');
+  if (langSwitcher) {
+    console.log('Language switcher found at:', langSwitcher.getBoundingClientRect());
+  } else {
+    console.warn('Language switcher not found!');
+  }
+});
+
+
+
+
+
     </script>
   </body>
 </html>
