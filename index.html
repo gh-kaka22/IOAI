@@ -87,35 +87,34 @@
 
       /* Language switcher */
       .lang-switcher {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 4px;
-    border-radius: 9999px;
-    display: flex;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-  }
-  
-  .lang-option {
-    padding: 4px 12px;
-    border-radius: 9999px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-  
-  .lang-option.active {
-    background-color: white;
-    color: #2563eb;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  .lang-switcher-container {
-  position: fixed !important;
-  top: 1rem !important;
-  right: 1rem !important;
-  z-index: 9999 !important;
-}
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 4px;
+        border-radius: 9999px;
+        display: flex;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+      }
 
+      .lang-option {
+        padding: 4px 12px;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .lang-option.active {
+        background-color: white;
+        color: #2563eb;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .lang-switcher-container {
+        position: fixed !important;
+        top: 1rem !important;
+        right: 1rem !important;
+        z-index: 9999 !important;
+      }
     </style>
   </head>
 
@@ -123,7 +122,11 @@
     <!-- Language Switcher -->
     <div class="lang-switcher-container">
       <div class="lang-switcher shadow-md">
-        <div id="lang-en" class="lang-option active" onclick="switchLanguage('en')">
+        <div
+          id="lang-en"
+          class="lang-option active"
+          onclick="switchLanguage('en')"
+        >
           EN
         </div>
         <div id="lang-ar" class="lang-option" onclick="switchLanguage('ar')">
@@ -1150,46 +1153,62 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              <span class="inline-block pb-2 border-b-4 border-blue-500" 
-                     data-en="Our Sponsors"
-                     data-ar="رعاة الأولمبياد">
+              <span
+                class="inline-block pb-2 border-b-4 border-blue-500"
+                data-en="Our Sponsors"
+                data-ar="رعاة الأولمبياد"
+              >
                 Our Sponsors
               </span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto"
-               data-en="We're grateful for the support of our sponsors who make this event possible"
-               data-ar="نحن ممتنون لدعم رعاتنا الذين يجعلون هذا الحدث ممكنًا">
-              We're grateful for the support of our sponsors who make this event possible
+            <p
+              class="text-xl text-gray-600 max-w-3xl mx-auto"
+              data-en="We're grateful for the support of our sponsors who make this event possible"
+              data-ar="نحن ممتنون لدعم رعاتنا الذين يجعلون هذا الحدث ممكنًا"
+            >
+              We're grateful for the support of our sponsors who make this event
+              possible
             </p>
           </div>
 
           <!-- Platinum Sponsors -->
           <div class="mb-16">
-            <h3 class="text-xl font-bold text-center text-gray-700 mb-8"
-                data-en="Platinum Sponsors"
-                data-ar="الرعاة البلاتينيون">
+            <h3
+              class="text-xl font-bold text-center text-gray-700 mb-8"
+              data-en="Platinum Sponsors"
+              data-ar="الرعاة البلاتينيون"
+            >
               Platinum Sponsors
             </h3>
             <div class="flex justify-center items-center">
-              <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all">
-                <div class="text-center">
-                  <!-- BeeOrder Logo -->
-                  <img 
-                    src="./images/bee-order-cgpt-logo.png" 
-                    alt="BeeOrder Platinum Sponsor" 
-                    class="mx-auto w-64 h-auto mb-4"
-                    style="filter: hue-rotate(200deg) brightness(0.9);"
+              <div
+                class="rounded-xl shadow-md hover:shadow-lg transition-all"
+                style="
+                  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                "
+              >
+                <div class="p-8 text-center">
+                  <!-- BeeOrder Logo with white styling -->
+                  <div class="mb-4">
+                    <img
+                      src="./images/BeeORDER_Logo.png"
+                      alt="BeeOrder Platinum Sponsor"
+                      class="mx-auto w-40 h-auto"
+                      style="filter: brightness(0) invert(1)"
+                    />
+                  </div>
+                  <div class="text-2xl font-bold text-white">BEEORDER</div>
+                  <p
+                    class="text-gray-300 text-sm mt-1"
+                    data-en="Official Platinum Sponsor"
+                    data-ar="الراعي البلاتيني الرسمي"
                   >
-                  <p class="text-gray-500 text-sm"
-                     data-en="Official Platinum Sponsor"
-                     data-ar="الراعي البلاتيني الرسمي">
                     Official Platinum Sponsor
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          
         </div>
       </section>
     </main>
@@ -1436,16 +1455,18 @@
         switchLanguage("en");
       };
 
-
-// Add this to your existing script
-window.addEventListener('load', function() {
-  const langSwitcher = document.querySelector('.lang-switcher-container');
-  if (langSwitcher) {
-    console.log('Language switcher found at:', langSwitcher.getBoundingClientRect());
-  } else {
-    console.warn('Language switcher not found!');
-  }
-});
+      // Add this to your existing script
+      window.addEventListener("load", function () {
+        const langSwitcher = document.querySelector(".lang-switcher-container");
+        if (langSwitcher) {
+          console.log(
+            "Language switcher found at:",
+            langSwitcher.getBoundingClientRect()
+          );
+        } else {
+          console.warn("Language switcher not found!");
+        }
+      });
     </script>
   </body>
 </html>
